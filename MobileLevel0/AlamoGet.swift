@@ -26,19 +26,15 @@ func getAndPopulate(vc: ItemsViewController) {
                     Instance.instance.itemsArray.last?.image = UIImage(named: "codebehind square")
                 }
             }
-//          vc.refreshView()
         }
     }
 }
 
 func getImageAndStore(url: String, item: Item, vc: ItemsViewController) {
-    // get the image and keep it in memory; in RAM; not optimal for large number of images
-    // this is an OK solution since we have few images to GET (i.e 4)
     Alamofire.request(url).responseImage { response in
         if let img = response.result.value {
             item.image = img
         }
-        // not optimal; the best way would have been to refresh the view after all images were fetched
         vc.refreshView()
     }
 }

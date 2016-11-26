@@ -14,24 +14,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var titleLbl: customLabel!
-    @IBOutlet weak var txtView: UITextView!
-    
+    @IBOutlet weak var bodyLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         img.image = Instance.instance.itemsArray[itemVCItemIndex].image
         titleLbl.text = Instance.instance.itemsArray[itemVCItemIndex].title
-        txtView.text = Instance.instance.itemsArray[itemVCItemIndex].content
+        bodyLbl.text = Instance.instance.itemsArray[itemVCItemIndex].content
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
